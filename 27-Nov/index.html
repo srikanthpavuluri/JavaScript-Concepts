@@ -1,0 +1,57 @@
+<html>
+<head>
+<script type="text/javascript" src="array-examples.js" />
+<script type="text/javascript" src="data-types-examples.js" />
+
+<script type="text/javascript">
+    function onTermsChange() {
+        // console.log(e.target.value);
+    }
+
+    function SubmitBtn() {
+        console.log("Submit handler is called")
+        const p = document.getElementById('hoversection');
+        const pBackgroundColor = p.style.backgroundColor;
+        p.style.backgroundColor = pBackgroundColor == '' ? 'red': pBackgroundColor == 'red' ? 'blue' : 'yellow';
+    }
+
+    function ongenderChange(selectedgender) {
+        console.log(selectedgender);
+    }
+
+    function onInputChange () {
+        const name = document.getElementById('name');
+        console.log(name.value, 'name');
+    }
+</script>
+</head>
+<body>
+    <h2>Topics - 27th Nov</h2>
+    <ol> 
+        <li>DataTypes && typeOf() <li> - 	Number, String, Object, Boolean, Undefined, Null</li></li>
+        <li>Events - onClick, onChange, onload, onMouseOver, onKeyDown</li>
+        <li>Arrays Methods - Sort, Filter, map, foreach</li>
+    </ol>
+<form>  
+    <input  type="text"  id="name" value="" placeholder="Enter here!" onKeyDown="onInputChange()" />
+  <br/>
+  <br />
+   
+  <input type="radio" name="gender" onChange="ongenderChange('male')" />Male
+  <input type="radio" name="gender" onChange="ongenderChange('female')" /> Female
+  
+  <br/>
+  <br />
+
+   <input type="checkbox" name="t-and-conditions"onChange="onTermsChange()" /> Terms and Conditions
+  
+  <br/>
+  <br />
+  
+  <p id ="hoversection" onMouseOver="SubmitBtn()" >Hover on me to see the changes</p>
+  
+  <input type="button" value="Save" />
+  
+</form>
+</body>
+</html>
